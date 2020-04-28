@@ -1,0 +1,41 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {american}
+\defcounter {refsection}{0}\relax 
+\contentsline {starchapter}{Table des sigles et acronymes}{xi}{chapter*.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {starchapter}{Introduction}{1}{chapter*.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{I\hspace {1em}Work positionning}{3}{part.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {1}Chapter 1}{5}{chapter.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.1}Section 1}{5}{section.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {2}Chapter}{7}{chapter.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}Section 1}{7}{section.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {3}Chapter}{9}{chapter.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.1}Section 1}{9}{section.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{II\hspace {1em}Title for part 2}{13}{part.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {4}Chapter}{15}{chapter.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}Section 1}{15}{section.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Experiments}{17}{chapter.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.1}Section 1}{17}{section.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {starchapter}{Conclusion}{21}{chapter*.13}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {A}Detailed presentation of the datasets}{23}{appendix.A}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {B}Solver library}{25}{appendix.B}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {C}SVM librairy}{27}{appendix.C}
+\defcounter {refsection}{0}\relax 
+\contentsline {starchapter}{Bibliographie}{28}{appendix.C}

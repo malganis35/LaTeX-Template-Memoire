@@ -1,0 +1,183 @@
+\RequirePackage[l2tabu, orthodox]{nag} % check all packages
+
+\usepackage[a4paper]{templates/first-page-udg}
+
+% Encoding and internationalization
+\usepackage[T1]{fontenc}
+\usepackage{aecompl}
+\usepackage[utf8]{inputenc}  % For accent
+% \usepackage[french]{babel} % Comment this line if the document is written in english
+\usepackage[american]{babel} % Comment this line if the document is written in english
+
+% Math packages
+\usepackage{amsmath,amssymb}
+\usepackage{mathrsfs}
+\usepackage{amsthm}
+\usepackage{a4wide}
+\renewcommand{\baselinestretch}{1.05}
+
+% Mini table of content and acronyms
+\usepackage[nottoc, notlof, notlot]{tocbibind}
+\usepackage[french]{minitoc}
+\setcounter{minitocdepth}{2}
+\mtcindent=15pt
+\setlength{\parskip}{10pt}
+
+\let\minitocORIG\minitoc
+\renewcommand{\minitoc}{\minitocORIG \vspace{1.5em}}
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{2}
+
+% Graphics and hyperlinks
+\usepackage{ifpdf}
+\ifpdf
+  \usepackage[pdftex]{graphicx}
+  \DeclareGraphicsExtensions{.jpg,.pdf,.png}
+  %\usepackage[a4paper,pagebackref,hyperindex=true]{hyperref}
+  \usepackage[a4paper,hyperindex=true]{hyperref}
+\else
+  \usepackage{graphicx}
+  \DeclareGraphicsExtensions{.ps,.eps}
+  %\usepackage[a4paper,dvipdfm,pagebackref,hyperindex=true]{hyperref}
+  \usepackage[a4paper,dvipdfm,hyperindex=true]{hyperref}
+\fi
+\graphicspath{{.}{images/}}
+\usepackage{eso-pic}
+\usepackage{rotating}
+\usepackage[font=normalsize]{subfig}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\pgfplotsset{plot coordinates/math parser=false}
+\newlength\figureheight
+\newlength\figurewidth
+
+\pgfkeys{/pgf/number format/.cd,
+set decimal separator={,\!},
+1000 sep={\,},
+} % Comment this line if the document is written in english
+
+\usetikzlibrary{plotmarks}
+\usepackage{pdfpages}
+
+\usepackage[strict]{changepage}
+\newcommand\BackgroundPic{
+\put(0,0){
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\includegraphics[width=0.9\paperwidth,height=1\paperheight,keepaspectratio]{images/background-eps-converted-to}%
+\vfill
+}}}
+
+\usepackage{color}
+\definecolor{linkcol}{rgb}{0,0,0} 
+\definecolor{citecol}{rgb}{0,0,0}
+
+\hypersetup
+{
+bookmarksopen=true,
+pdftitle={Mon sujet de thèse complet},
+pdfauthor={Prénom NOM},
+pdfsubject={Rapport de thèse},
+pdfmenubar=true,
+pdfhighlight=/O,
+colorlinks=true,
+pdfpagemode=None,
+pdfpagelayout=SinglePage,
+pdffitwindow=true,
+linkcolor=linkcol,
+citecolor=citecol,
+urlcolor=linkcol
+}
+
+
+
+% Headers and footers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyfoot{}
+\fancyhead[LE,RO]{\bfseries\thepage}
+\fancyhead[RE]{\bfseries\nouppercase{\leftmark}}
+\fancyhead[LO]{\bfseries\nouppercase{\rightmark}}
+
+\let\headruleORIG\headrule
+\renewcommand{\headrule}{\color{black} \headruleORIG}
+\renewcommand{\headrulewidth}{1.0pt}
+\usepackage{colortbl}
+\arrayrulecolor{black}
+
+\fancypagestyle{plain}{
+  \fancyhead{}
+  \fancyfoot[C]{\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+\usepackage[footnote]{acronym}
+
+% References formatting
+% Bibtex
+% \renewcommand*{\backref}[1]{}
+% \renewcommand*{\backrefalt}[4]{%
+% \ifcase #1 %
+% (Non cité.)%
+% \or
+% (Cité en page~#2.)%
+% \else
+% (Cité en pages~#2.)%
+% \fi}
+% \renewcommand*{\backrefsep}{, }
+% \renewcommand*{\backreftwosep}{ et~}
+% \renewcommand*{\backreflastsep}{ et~}
+
+% BibLatex
+\usepackage[style=alphabetic-verb,backend=bibtex,isbn=false,doi=false,backref=true,url=false]{biblatex}
+\addbibresource{references.bib}
+
+% Pages succession
+\makeatletter
+\def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else%
+  \hbox{}%
+  \thispagestyle{empty}%
+  \newpage%
+  \if@twocolumn\hbox{}\newpage\fi\fi\fi}
+\makeatother
+
+\newenvironment{vcenterpage}
+{\newpage\vspace*{\fill}\thispagestyle{empty}\renewcommand{\headrulewidth}{0pt}}
+{\vspace*{\fill}}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../roque-phdthesis"
+%%% End: 
+
+
+%% TO DO
+\usepackage{titlesec}
+\titleclass{\part}{top}
+\titleformat{\part}[display]
+{\normalfont\huge\bfseries}{\centering\partname\ \thepart}{20pt}{\Huge\centering}
+\titlespacing*{\part}{0pt}{50pt}{40pt}
+%\titleclass{\chapter}{straight}
+%\titleformat{\chapter}[display]
+%{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+%\titlespacing*{\chapter} {0pt}{50pt}{40pt}
+
+
+\usepackage{amsmath,amsfonts}
+
+% Top 9 packages
+% \usepackage{microtype}
+% The microtype package improves the spacing between words and letters. It does a lot more and most people won’t notice the difference. But still, the resulting document will be easier to read and looks better when microtype is loaded. Load this package after fonts, if any, as the package behavior is dependent on this font. - See more at: http://www.howtotex.com/packages/9-essential-latex-packages-everyone-should-use/#sthash.e5Qsr4ay.dpuf
+% \usepackage{siunitx}
+% The siunitx package greatly simplifies TeXing when writing scientific documents, where units and numbers are a big part of the writing. This package adds commands like \num for typesetting numbers in all sorts of ways and \si for units. The commands I use a lot are \SI and \SIrange. For example, \SI{10}{\hertz} results in ‘10Hz‘ in text (this is especially useful to prevent typo’s; I tend to write HZ or hz a lot instead of Hz). The \SIrange command requires one more input variable: \SIrange{10}{100}{\hertz} produces ‘10Hz to 100Hz‘. Note that the siunitx package was already featured in an earlier post on this blog. - See more at: http://www.howtotex.com/packages/9-essential-latex-packages-everyone-should-use/#sthash.e5Qsr4ay.dpuf
+% \usepackage{cleveref}
+% Another fascinating LaTeX package is cleveref. This package introduces the \cref command. When using this command to make cross-references, instead of \ref or \eqref, a word is placed in front of the reference according to the type of reference: fig. for figures, eq. for equations. Hence, another LaTeX package that simplifies the writing. The package was earlier mentioned in this post. In that post it is also shown how to change the words in front of references. - See more at: http://www.howtotex.com/packages/9-essential-latex-packages-everyone-should-use/#sthash.e5Qsr4ay.dpuf
+% \usepackage[colorlinks=false, pdfborder={0 0 0}]{hyperref} 
+% See more at: http://www.howtotex.com/packages/9-essential-latex-packages-everyone-should-use/#sthash.e5Qsr4ay.dpuf
+% \usepackage{booktabs}
+% The booktabs package allows you to create tables without vertical separators. These separators are just unnecessary and plain ugly. Creating a table with booktabs is however more of a pain than the normal way of creating LaTeX tables. Therefore, I dedicated a post on how to create nice tables with the booktabs package earlier. - See more at: http://www.howtotex.com/packages/9-essential-latex-packages-everyone-should-use/#sthash.e5Qsr4ay.dpuf
+\usepackage{todonotes}
